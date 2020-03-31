@@ -1,38 +1,31 @@
-﻿const m=6;
-var a: array[0..m-1] of integer;
-    n,i,x,count,c2,c3,c6,c0: integer;
+﻿var b: array[0..5] of integer;
+    n,i,x,count,k6,k2,k3,k0: integer;
     
 begin
   
   read(n);
-  for i:= 1 to m do read(a[i mod m]);
-  count:=0;
-  c0:=0; c2:=0; c3:=0; c6:=0;
-  for i:= m+1 to n do
+  for i:= 1 to 6 do readln(b[i mod 6]);
+  count:=0;   // итговое количество пар 
+  k6:=0; k3:=0; k2:=0; k0:=0; // количество чисел в отстойнике делящихся на ...
+  
+  for i:= 7 to n do
   begin
-      
+    
       read(x);
-      if x*a[i mod m] mod 6 = 0 then inc(count);
-      if x mod 2 =0 then
-      begin
-          
-          if x mod 3 =0 then count:=count+c0+c2+c3+c6
-                        else count:=count+c3;
-                     
-      end
-      else
-          if x mod 3 =0 then count:=count+c2
-                        else count:=count+c6;
-      
-      if a[i mod m] mod 2 = 0 then 
-          if a[i mod m] mod 3 =0 then inc(c6)
-                                 else inc(c2)
-                              else
-          if a[i mod m] mod 3 = 0 then inc(c3)
-                                  else inc(c0);
-      a[i mod m]:=x;
-      
+      if x*b[i mod 6] mod 6 = 0 then inc(count);
+      if x mod 2 = 0 then if x mod 3 = 0 then count:=count+k6+k2+k3+k0
+                                         else count:=count+k3+k6
+                     else if x mod 3 = 0 then count:=count+k2+k6
+                                         else count:=count+k6;
+      if b[i mod 6] mod 2 = 0 then if b[i mod 6] mod 3 = 0 then inc(k6)
+                                                           else inc(k2)
+                              else if b[i mod 6] mod 3 = 0 then inc(k3)
+                                                           else inc(k0);
+      b[i mod 6]:=x;
+    
   end;
+  
   write(count);
+ { 2 4 3 4 5 6 7 9 6 3 2 4 6 7}
   
 end.
