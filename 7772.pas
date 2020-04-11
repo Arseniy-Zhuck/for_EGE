@@ -1,7 +1,5 @@
 ﻿var A: array[0..7] of integer;
     i,n,x,max,otvet: integer;
-    
-    
 begin
   readln(x);
   for i:= 1 to 8 do readln(a[i mod 8]);
@@ -15,5 +13,5 @@ begin
      a[i mod 8]:=x;
   end;
   write(otvet);
- end.
+end.
 
