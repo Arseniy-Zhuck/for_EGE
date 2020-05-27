@@ -1,17 +1,19 @@
-﻿var A: array[0..7] of integer;
-    i,n,x,max,otvet: integer;
+﻿var maxPr, max, i,n,a: integer;
+    b: array[0..7] of integer;
+
 begin
-  readln(x);
-  for i:= 1 to 8 do readln(a[i mod 8]);
-  
+  read(n);
+  for i:= 1 to 8 do readln(b[i mod 8]);
+  max:=-100;
+  maxPr:=-37;
   for i:= 9 to n do
   begin
-    read(x); 
-    if a[i mod 8]*x > otvet then otvet:= a[i mod 8]*x;
-     if x*max >otvet then otvet:=x*max;
-     if a[i mod 8]> max then max:=a[i mod 8];
-     a[i mod 8]:=x;
+    read(a);
+    if a*b[i mod 8]> maxPr then maxPr:=a*b[i mod 8];
+    if a*max > maxPr then maxPr:= a*max;
+    if b[i mod 8]> max then max:=b[i mod 8];
+    b[i mod 8]:=a;
   end;
-  write(otvet);
+  writeln(maxPr);
+  
 end.
-
