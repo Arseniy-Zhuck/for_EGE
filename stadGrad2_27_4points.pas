@@ -1,5 +1,5 @@
-﻿const M=60;
-const B=40;
+﻿const M=80;
+const B=50;
 var ost,ostB: array[0..m-1] of integer; // количество элементов с отстаком i
     count,i,n,a,r: integer;
 
