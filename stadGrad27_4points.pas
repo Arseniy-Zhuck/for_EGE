@@ -11,7 +11,7 @@ begin
   count:=0;
   for i:= 1 to n do
   begin
-    read(a); [75,195,255,15,15,12,72,132,315]   a= 75  
+    read(a); //[75,195,255,15,15,12,72,132,315]   a= 75  
     if a>b then begin 
                       count:=count+ost[a mod m]; 
                       inc(ostB[a mod m]); 

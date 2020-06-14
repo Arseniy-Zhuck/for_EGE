@@ -1,6 +1,6 @@
 ﻿const M=80;
 const B=50;
-var ost,ostB: array[0..m-1] of integer; // количество элементов с отстаком i
+var ost, ostB: array[0..m-1] of integer; // количество элементов с отстаком i
     count,i,n,a,r: integer;
 
 begin 
@@ -19,9 +19,14 @@ begin
       else
         if a>B  then count:=count+ost[m-r]
                 else count:=count+ostB[m-r];
+                
       if a>B then inc(ostB[r]);
       inc(ost[r]);
     end;
+  
+  
   write(count);
+
+
 end.
     
